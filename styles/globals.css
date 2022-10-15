@@ -19,7 +19,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -27,4 +27,17 @@ a {
     color: white;
     background: black;
   }
+} */
+
+.drop{
+	padding: 0;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.44);
+	margin: 0 auto;
+	border-radius:0% 100% 100% 100%;
+  transform: rotate(45deg);
+}
+
+.softGlow {
+  background: rgb(107,60,182);
+  background: radial-gradient(circle, rgba(86, 225, 255, 0.30) 0%, rgba(25,4,46,0) 70%);
 }
