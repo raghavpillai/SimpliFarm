@@ -1,5 +1,5 @@
 import math
-import weather as weather
+import src.modules.weather as weather
 
 def get_temp_stress(max_temp: int, min_temp: int, local_max: float, local_min: float):
     # Measure temperature stress, humidity

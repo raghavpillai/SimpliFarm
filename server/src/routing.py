@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # Module handling routing of requests from Flask app
 
+import json
 from typing import Dict
 from flask import current_app as app
+import src.modules.lol as lol
 
 def _default_index() -> str:
     """
@@ -10,15 +12,16 @@ def _default_index() -> str:
     """
     return "Hi"
 
-def _name_page(name: str) -> str:
+def _main_api(zip: str, crop: str, acres: str, ppm: str) -> str:
     """
     Name page
     """
-    return f"Hi, {name}. Welcome to this website!"
+    ret = lol.get_yield_info(zip, crop, acres, ppm)
+    return json.dumps(ret)
 
 routes: Dict = {
     "/": _default_index,
-    "/naming/<name>": _name_page
+    "/api/<zip>/<crop>/<acres>/<ppm>": _main_api
 }
 
 def create_routes():
