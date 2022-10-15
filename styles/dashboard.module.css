@@ -1,0 +1,17 @@
+.graph-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 75%;
+    height: 75vh;
+}
+
+.graph{
+    align-self: center;
+    justify-content: center;
+}
+
