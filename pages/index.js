@@ -134,7 +134,6 @@ export default function Home() {
                 <p>SciKit-Learn</p>
                 <p>Co:Here</p>
                 <p>Twilio</p>
-                <p>Co:Here</p>
               </div>
             </div>
             {/* card */}

@@ -14,8 +14,8 @@ export default function WaterGraph(props) {
             duration: 3500,
             easing: 'easeInOutBack',
             delay: 250,
-            colors: { type: 'color', properties: ['borderColor', 'backgroundColor'], from: 'transparent' }
-        }
+            colors: { type: 'color', properties: ['borderColor', 'backgroundColor'], from: 'transparent' },
+        },
     }
 
     const data = {
