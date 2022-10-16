@@ -48,3 +48,29 @@ a {
   background: rgb(107,60,182);
   background: linear-gradient(rgba(25,4,46,0) 0%, rgba(86, 224, 255, 0.15) 70%);
 }
+
+.input-box {
+  background-color: white;
+  color: #FDFCFF;
+  transition: all ease-in-out .1s;
+  padding-top: 1rem;
+}
+
+.button {
+  background-color: #FDFCFF;
+  padding: .1rem;
+  color: black;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+  transition: all 0.1s ease-in-out;
+  border-color: #cccccc;
+  background-color: #cccccc;
+}
+
+.image-background {
+  background: url("../public/shutterstock-653708227.jpg") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+}

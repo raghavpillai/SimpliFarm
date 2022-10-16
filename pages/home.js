@@ -31,34 +31,6 @@ export default function Home() {
           <div className="rounded-full bg-[#6BBDF8] inline-block px-4 py-2 font-semibold">Start now</div>
         </div>
       </div>
-
-      <div className="grid place-items-center bg-[#12a1c0] drop-shadow-lg">
-        <div>Sign Up</div>
-
-        <div className="grid place-items-center bg-[#108ca4] p-10 w-1/2 rounded-lg space-y-4 drop-shadow-md text-white font-semibold">
-          <div className="grid grid-cols-2">
-            <div>ZIP Code</div>
-            <input></input>
-          </div>
-
-          <div className="grid grid-cols-2">
-            <div>Acres</div>
-            <input></input>
-          </div>
-
-          <div className="grid grid-cols-2">
-            <div>Soil PPM</div>
-            <input></input>
-          </div>
-
-          <div className="grid grid-cols-2">
-            <div>Crop Type</div>
-            <input></input>
-          </div>
-
-          <div>Sign Up</div>
-        </div>
-      </div>
     </div>
     </>
   )
