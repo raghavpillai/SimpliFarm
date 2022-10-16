@@ -4,7 +4,7 @@ import {Chart as ChartJS} from "chart.js/auto";
 import { Line } from 'react-chartjs-2';
 
 export default function CostSplit(props) {
-    const labels = ["S", "M", "T", "W", "TH", "F", "S", "SU", "M", "T", "W", "TH", "F", "S"];
+    const labels = ["S", "M", "T", "W", "R", "F", "S", "U", "M", "T", "W", "R", "F", "S"];
 
     const options = { 
         responsive: true,
@@ -26,13 +26,13 @@ export default function CostSplit(props) {
         labels: labels,
         datasets: [
             {
-                label: "Water costs in dollars",
+                label: "Water Cost ($)",
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: '#FDFCFF',
                 data: props.data[0],
             },
             {
-                label: "Fertilizer costs in dollars",
+                label: "Fertilizer Cost ($)",
                 backgroundColor: "#FDFCFF",
                 borderColor: "#56E1FF",
                 data: props.data[1],
