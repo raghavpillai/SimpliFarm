@@ -22,7 +22,7 @@ const data = {
   ],
 };
 
-class Home extends Component {
+class Dashboard extends Component {
 
 
 
@@ -58,4 +58,4 @@ class Home extends Component {
 
 }
 
-export default Home
+export default Dashboard
