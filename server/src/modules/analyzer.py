@@ -39,4 +39,7 @@ def water_score(base_ppm: int, target_ppm: int, base_water: int, rainfall: float
     if values["new_ppm"] > target_ppm*1.01:
         values["fert"] += pow( (abs(target_ppm - values["new_ppm"]) * 0.1), 2)
 
+    values["fert_cost"] = values["fert"] * 0.5
+    values["water_cost"] = values["water"] * 0.5
+
     return values

@@ -16,6 +16,7 @@ def get_yield_info(zip: str, crop: str, acres: str, ppm: str):
     
     total_water = 0
     total_fert = 0
+    
     for index, day in enumerate(forecast["forecast"]):
         ppm_score = analyzer.water_score(current_ppm, target_ppm, base_water, day["precip"], day["humidity"])
         stress_score = analyzer.get_temp_stress(max_temp, min_temp, day["max_f"], day["min_f"])
@@ -26,9 +27,9 @@ def get_yield_info(zip: str, crop: str, acres: str, ppm: str):
         total_water += ppm_score["water"]
         total_fert += ppm_score["fert"]
     
+    forecast["total_price"] = (total_water * 0.5) + (total_fert + 0.5)
     forecast["total_water"] = total_water
     forecast["total_fert"] = total_fert
     forecast["needed_water"] = total_water * int(acres)
     forecast["needed_fert"] = total_water * int(acres)
-    print(forecast)
     return forecast
