@@ -22,7 +22,7 @@ export default function Navbar() {
             else {
                 setUser(null)
 
-                router.push('/')
+                
             }
             setLoading(false)
         })
@@ -38,6 +38,7 @@ export default function Navbar() {
     const signOutWithGoogleFunct = () => {
         signOutWithGoogle();
         alert("You have signed out")
+        router.push('/')
         // setUser(null)
     }
 

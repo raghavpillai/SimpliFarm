@@ -20,6 +20,9 @@ export default function Home() {
     {/* Rectangle */}
     <div className="w-[50rem] h-[15rem] opacity-20 bg-[#56E1FF] absolute -top-28 -right-40 rotate-[20deg]"></div>
     <div className="softGlow absolute h-[45rem] w-[45rem] left-0 -translate-x-1/2"></div>
+    <div className='absolute right-52 top-44'>
+      <Image src={'/assets/heroImage2.webp'} width={400} height={400}></Image>
+    </div>
     
     <div className="flex-col">
       <div className="grid grid-cols-2 h-screen place-items-center mx-28">
