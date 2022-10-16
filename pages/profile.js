@@ -50,7 +50,7 @@ export default function Profile(){
                         </Link>
                         <Link href="/dashboard">
                         <div className="px-4 py-2 bg-[#AAF1FF] mx-4 rounded-full cursor-pointer">
-                            Visit Dashboard
+                            Visit Charts
                         </div>
                         </Link>
                         

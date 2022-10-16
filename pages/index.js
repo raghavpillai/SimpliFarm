@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>FARMERS UNITED</title>
+      <title>SimpliFarm</title>
       <meta name="description" content="Get maximum crop yield" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
@@ -27,10 +27,10 @@ export default function Home() {
     <div className="flex flex-col z-10 relative">
       <div className="grid grid-cols-2 h-screen place-items-center mx-28">
         <div className="flex-col space-y-2">
-          <div className="text-9xl font-extrabold flex items-end">
-            Farmers United
-            <div className='mb-4'>
-              <div className="bg-[#56E1FF] opacity-50 drop w-32 h-32"></div>
+          <div className="text-8xl font-extrabold flex items-end">
+            SimpliFarm
+            <div className='mb-4 ml-4'>
+              <div className="bg-[#56E1FF] opacity-50 drop w-24 h-24"></div>
             </div>
           </div>
           <div className='text-3xl text-[#2B2B2B]'>
@@ -93,12 +93,12 @@ export default function Home() {
           Boost Crop Yield
         </div>
         <div className='px-8 pt-8 boostBorder rounded-xl w-1/2 mb-12 shadow-2xl'>
-          <div className='w-full h-full p-4 bg-white text-2xl font-semibold text-[#1E1E1E rouded-t-xl'>
-            Using machine learning models to predict optimal water usage, save more on water.
-            Crunch, track, and display data through Simplifarm. Simplifarm strives to know your farm
-            better than anyone else. Boost crop yields while saving costs!
+          <div className='w-full h-full p-4 bg-white text-2xl font-semibold text-[#1E1E1E] rouded-t-xl'>
+            From machine learning models using your farm data to chart analysis straight to your browser.
+            Crunch, track, and display data through SimpliFarm. We strive to know your farm
+            better than anyone else.
             <div className='flex justify-center my-6'>
-              <Image src="/assets/wheat.png" width={100} height={100}></Image>
+              <Image src="/assets/plant.png" width={100} height={100}></Image>
 
             </div>
           </div>
@@ -106,10 +106,14 @@ export default function Home() {
         </div>
       </div>
       <div className='h-screen flex  envisionBG'>
-        <div className='w-1/2 flex items-center justify-center'>
+        <div className='w-1/2 flex flex-col items-center justify-center'>
           <div className='text-6xl font-black'>
             Envision Growth
           </div>
+          <div className='text-2xl font-medium text-[#1E1E1E] mt-4 w-3/4 text-center'>
+            View graphs that tailor to your farm. A technological-focused approach to farm data. Don't worry, we got you.
+          </div>
+
         </div>
         <div className='w-1/2 flex items-center justify-end'>
           <div className='py-8 pl-8 boostBorder rounded-l-xl'>
