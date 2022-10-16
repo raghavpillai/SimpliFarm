@@ -2,6 +2,7 @@ import styles from '../styles/form.module.css'
 import React, {Component, useEffect, useState} from 'react';
 import { NativeSelect, InputLabel, Select, OutlinedInput, MenuItem } from '@mui/material';
 import Navbar from '../components/navbar';
+import Link from 'next/link';
 
 const fields = ["zip-code", "acres", "soilPPM", "crop-type"];
 
@@ -12,7 +13,11 @@ export default function Form() {
     const [acres, setAcres] = useState('');
     const [currentSoilPPM, setCurrentSoilPPM] = useState('');
     const [expectedSoilPPM, setExpectedSoilPPM] = useState('');
-    const [cropType, setCropType] = useState('');;
+    const [cropType, setCropType] = useState('');
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
 
 
     function handleSubmit(event){

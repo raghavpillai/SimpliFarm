@@ -19,12 +19,12 @@ export default function Home() {
 
     {/* Rectangle */}
     <div className="w-[50rem] h-[15rem] opacity-20 bg-[#56E1FF] absolute -top-28 -right-40 rotate-[20deg]"></div>
-    <div className="softGlow absolute h-[45rem] w-[45rem] left-0 -translate-x-1/2"></div>
+    <div className="softGlow absolute h-[45rem] w-[45rem] left-0 -translate-x-1/2 z-10"></div>
     <div className='absolute right-52 top-44'>
       <Image src={'/assets/heroImage2.webp'} width={400} height={400}></Image>
     </div>
     
-    <div className="flex-col">
+    <div className="flex flex-col z-10 relative">
       <div className="grid grid-cols-2 h-screen place-items-center mx-28">
         <div className="flex-col space-y-2">
           <div className="text-9xl font-extrabold flex items-end">
@@ -36,7 +36,7 @@ export default function Home() {
           <div className='text-3xl text-[#2B2B2B]'>
             Do more, save more. Calculate true water needs and track water usage.
           </div>
-          <div className="rounded-full bg-[#6BBDF8] inline-block px-4 py-2 font-semibold">Start now</div>
+          <a href="#learnMore" className="rounded-full bg-[#6BBDF8] inline-block px-4 py-2 font-semibold z-50">Learn More</a>
         </div>
       </div>
 
@@ -44,7 +44,7 @@ export default function Home() {
         {/* stripe */}
         <div className='absolute top-0 -left-44 w-[120rem] h-[35rem] bg-[#99E3F4] z-0 -rotate-[30deg] shadow'></div>
 
-        <div className="text-7xl font-semibold py-5 z-10">How it works.</div>
+        <div id="learnMore" className="text-7xl font-black py-5 z-10">How it works.</div>
         <div className='flex items-center my-6 z-10'>
           <div className='text-7xl font-extrabold mr-32 -ml-32'>
             1
@@ -87,10 +87,37 @@ export default function Home() {
           </div>
 
         </div>
+      </div>
+      <div className='flex flex-col items-center'>
+        <div className='text-6xl font-black my-12'>
+          Boost Crop Yield
+        </div>
+        <div className='px-8 pt-8 boostBorder rounded-xl w-1/2 mb-12 shadow-2xl'>
+          <div className='w-full h-full p-4 bg-white text-2xl font-semibold text-[#1E1E1E rouded-t-xl'>
+            Using machine learning models to predict optimal water usage, save more on water.
+            Crunch, track, and display data through Simplifarm. Simplifarm strives to know your farm
+            better than anyone else. Boost crop yields while saving costs!
+            <div className='flex justify-center my-6'>
+              <Image src="/assets/wheat.png" width={100} height={100}></Image>
 
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div className='h-screen flex  envisionBG'>
+        <div className='w-1/2 flex items-center justify-center'>
+          <div className='text-6xl font-black'>
+            Envision Growth
+          </div>
+        </div>
+        <div className='w-1/2 flex items-center justify-end'>
+          <div className='py-8 pl-8 boostBorder rounded-l-xl'>
+            <Image src="/assets/graph.png" width={1100} height={700}></Image>
+          </div>
 
+        </div>
 
-        
       </div>
     </div>
     </>
