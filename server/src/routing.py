@@ -14,7 +14,7 @@ def _default_index() -> str:
 
 def _main_api(zip: str, crop: str, acres: str, ppm: str) -> str:
     """
-    Name page
+    Main API function
     """
     ret = lol.get_yield_info(zip, crop, acres, ppm)
     return json.dumps(ret)
