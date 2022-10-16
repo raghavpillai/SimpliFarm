@@ -19,7 +19,7 @@ export default function Dashboard() {
     let tempLo = []
     let precip = []
     let humidity = []
-    let costs = [0, 0]
+    let costs = [[], []]
     
     let dump = JSON.parse(localStorage.getItem('obj'));
     
@@ -28,8 +28,8 @@ export default function Dashboard() {
     for(let i=0; i < 14; i++){
         console.log(dump.days[i])
         waterlevels.push(dump.days[i].ppm.water)
-        costs[0] += dump.days[i].ppm.water_cost
-        costs[1] += dump.days[i].ppm.fert_cost
+        costs[0].push(dump.days[i].ppm.water_cost)
+        costs[1].push(dump.days[i].ppm.fert_cost)
         fert.push(dump.days[i].ppm.fert)
         tempHi.push(dump.forecast[i].max_f)
         tempLo.push(dump.forecast[i].min_f)
@@ -91,6 +91,15 @@ export default function Dashboard() {
                     <div className='w-1/1 h-auto items-center'>
                         <div className='self-center w-3/4 h-auto ml-[10%]'>
                             <Humidity data={[tempHi, tempLo]} />
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Costs per day for water and Fertilizer</div>
+                    <div className='w-1/1 h-auto items-center'>
+                        <div className='self-center w-3/4 h-auto ml-[10%]'>
+                            <CostSplit data={costs} />
                         </div>
                     </div>
                 </div>

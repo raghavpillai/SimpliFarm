@@ -11,8 +11,6 @@ export default function Profile(){
     const [name ,setName] = useState("")
     const [email ,setEmail] = useState("")
 
-    localStorage.removeItem('obj')
-
     onAuthStateChanged(auth, (user) => {
         if (user){
             setPhotoURL(user.photoURL)

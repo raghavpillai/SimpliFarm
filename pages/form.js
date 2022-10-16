@@ -25,7 +25,6 @@ export default function Form() {
         }).then(res => res.json())
         .then(res => {
             console.log(res)
-            localStorage.removeItem('obj')
             localStorage.setItem('obj', JSON.stringify(res));
             router.push('/dashboard')
         })

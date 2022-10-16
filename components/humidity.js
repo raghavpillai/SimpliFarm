@@ -9,17 +9,29 @@ export default function Humidity(props) {
 
     const options = { 
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: true,
+        animation: {
+            duration: 3500,
+            easing: 'easeInOutBack',
+            delay: 250,
+            colors: { type: 'color', properties: ['borderColor', 'backgroundColor'], from: 'transparent' }
+        }
     }
 
     const data = {
         labels: labels,
         datasets: [
             {
-                label: "Humidity percentage",
+                label: "",
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: '#FDFCFF',
+                data: props.data[0],
+            },
+            {
+                label: "",
                 backgroundColor: "#FDFCFF",
                 borderColor: "#56E1FF",
-                data: props.data,
+                data: props.data[1],
             },
         ],
     };
