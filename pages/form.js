@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { NativeSelect, InputLabel, Select, OutlinedInput, MenuItem } from '@mui/material';
+import Navbar from '../components/navbar';
 
 const fields = ["zip-code", "acres", "soilPPM", "crop-type"];
 
@@ -52,6 +53,7 @@ class Form extends Component {
                     <div className="image-background h-[100%] w-[100%] absolute m-0">
                     </div>
 
+                    <Navbar />
                     <div className="grid absolute place-items-left bg-[#ecebeg] drop-shadow-lg w-[50%] h-[75vh] translate-y-[25vh]">
                         <div className="grid place-items-center bg-[#108ca4] p-5 rounded-lg m-0 space-y-0 drop-shadow-md text-white font-semibold">
                             <div className="grid grid-cols-2">
