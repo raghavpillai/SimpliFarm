@@ -26,7 +26,7 @@ export default function FertGraph(props) {
         labels: labels,
         datasets: [
             {
-                label: "",
+                label: "Fertilizer (kg)",
                 backgroundColor: "#FDFCFF",
                 borderColor: "#56E1FF",
                 data: props.data,
