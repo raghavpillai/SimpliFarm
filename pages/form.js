@@ -22,13 +22,12 @@ class Form extends Component {
     }
 
     handlechange(event){
+        console.log(this.state)
         for(let field in fields){
             if(event.target.id.search(fields[field])){
-                this.state.setState(() => {
-                    let temp = Object.assign({}, prevState.inputs);
-                    temp[field] = event.target.value
-                    return {temp}
-                })
+                let temp = this.state.inputs.slice()
+                temp[field] = event.target.value
+                this.setState({inputs: temp})
                 console.log(this.state)
                 return;
             }
@@ -53,30 +52,30 @@ class Form extends Component {
                     <div className="image-background h-[100%] w-[100%] absolute m-0">
                     </div>
 
-                    <div className="grid absolute place-items-left bg-[#ecebeg] drop-shadow-lg w-[50%] h-[75vh] translate-y-[25vh]">
+                    <div className="grid absolute place-items-left bg-[#ecebeg] drop-shadow-lg w-[50%] h-[75vh] translate-y-[25%] translate-x-[50%]">
                         <div className="grid place-items-center bg-[#108ca4] p-5 rounded-lg m-0 space-y-0 drop-shadow-md text-white font-semibold">
-                            <div className="grid grid-cols-2">
+                            <div className="grid grid-cols-1">
                                 <TextField onChange={this.handlechange} className="input-box rounded" id="outlined-basic zip-code" label="ZIP Code" variant="filled" />
                             </div>
 
-                            <div className="grid grid-cols-2">
+                            <div className="grid grid-cols-1">
                                 <TextField className="input-box rounded" id="outlined-basic acres" label="Acres" variant="filled" />
                             </div>
 
-                            <div className="grid grid-cols-2">
+                            <div className="grid grid-cols-1">
                                 <TextField className="input-box rounded" id="outlined-basic soilPPM" label="Soil PPM" variant="filled" />
                             </div>
 
-                            <div className="grid grid-cols-2">
+                            <div className="grid grid-cols-1">
                                 <div>
-                                    <InputLabel id="demo-controlled-open-select-label">Crop Type</InputLabel>
+                                    {/* <InputLabel className='input-box rounded border' id="demo-controlled-open-select-label">Crop Type</InputLabel> */}
                                     <Select
                                         labelId="demo-controlled-open-select-label"
                                         id="demo-controlled-open-select"
                                         label="Crop Type"
                                         value={this.state.select}
                                         onChange={this.handleSelect}
-                                        className="input-box rounded w-[13.5rem]"
+                                        className="input-box rounded h-[7.5vh] w-[15vw]"
                                         >
                                         <MenuItem key="cotton" value="cotton"> Cotton </MenuItem>
                                     </Select>

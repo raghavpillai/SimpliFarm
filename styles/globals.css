@@ -54,6 +54,8 @@ a {
   color: #FDFCFF;
   transition: all ease-in-out .1s;
   padding-top: 1rem;
+  text-align: center;
+  align-self: center;
 }
 
 .button {
@@ -72,5 +74,9 @@ a {
 .image-background {
   background: url("../public/shutterstock-653708227.jpg") no-repeat center center;
   background-size: cover;
+  filter: blur(.5rem);
+  filter: contrast(.5rem);
+  scale: 1.1;
   position: absolute;
+  overflow: hidden;
 }
