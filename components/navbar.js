@@ -49,9 +49,10 @@ export default function Navbar() {
     return (
         <div className="absolute top-0 w-full h-[5rem] flex justify-between items-center py-4 px-8 z-50">
             <Link href={"/"}>
-                <div className='font-black text-5xl cursor-pointer'>
+                {/* <div className='font-black text-5xl cursor-pointer'>
                     SF
-                </div>
+                </div> */}
+                <Image src="/assets/logo.png" width={50} height={50}></Image>
             </Link>
             {/* <div className='absolute text-center top-6 left-1/2 -translate-x-1/2 text-xl font-semibold'>
                 {user !== null && ("Hello " + user.displayName)}
