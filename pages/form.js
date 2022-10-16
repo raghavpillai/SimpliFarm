@@ -63,7 +63,8 @@ export default function Form() {
         }
         await postData(farmData);
         console.log("fetching")
-        fetch(`http://127.0.0.1:5000/api/${zipCodeInput}/${cropInput}/${acresInput}/${currentPPMInput}`, {
+        let name = JSON.parse(localStorage.getItem('name'));
+        fetch(`http://127.0.0.1:5000/api/${zipCodeInput}/${cropInput}/${acresInput}/${currentPPMInput}/${name}/${phone}`, {
             method: 'GET'
         }).then(res => res.json())
         .then(res => {
