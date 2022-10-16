@@ -21,24 +21,24 @@ export default function Home() {
 
     {/* Rectangle */}
     <div className="w-[50rem] h-[15rem] opacity-20 bg-[#56E1FF] absolute -top-28 -right-40 rotate-[20deg]"></div>
-    <div className="softGlow absolute h-[45rem] w-[45rem] left-0 -translate-x-1/2 z-10"></div>
+    <div className="softGlow absolute 2xl:h-[50rem] 2xl:w-[50rem] h-[45rem] w-[45rem] left-0 2xl:translate-y-[20%] -translate-x-1/2 z-10"></div>
     <div className='absolute right-52 top-44'>
-      <Image src={'/assets/heroImage2.webp'} width={400} height={400}></Image>
+      <Image src={'/assets/heroImage2.webp'} width={450} height={450}></Image>
     </div>
     
     <div className="flex flex-col z-10 relative">
       <div className="grid grid-cols-2 h-screen place-items-center mx-28">
         <div className="flex-col space-y-2">
-          <div className="text-8xl font-extrabold flex items-end">
+          <div className="2xl:text-9xl text-8xl font-extrabold flex items-end">
             SimpliFarm
             <div className='mb-4 ml-4'>
               <div className="bg-[#56E1FF] opacity-50 drop w-24 h-24"></div>
             </div>
           </div>
-          <div className='text-3xl text-[#2B2B2B]'>
+          <div className='2xl:text-4xl text-3xl text-[#2B2B2B]'>
             Do more, save more. Calculate true farming needs and track resource usage.
           </div>
-          <a href="#learnMore" className="rounded-full bg-[#6BBDF8] inline-block px-4 py-2 font-semibold z-50">Learn More</a>
+          <a href="#learnMore" className="rounded-full 2xl:text-xl bg-[#6BBDF8] inline-block px-4 py-2 font-semibold z-50">Learn More</a>
         </div>
       </div>
 

@@ -16,6 +16,7 @@ export default function Profile(){
             setPhotoURL(user.photoURL)
             setName(user.displayName)
             setEmail(user.email)
+            localStorage.setItem('name', JSON.stringify(name));
         }
         else {
             

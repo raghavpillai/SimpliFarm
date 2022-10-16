@@ -39,7 +39,7 @@ crops: dict = {
     }
 }
 
-def get_yield_info(zip: str, crop: str, acres: str, ppm: str) -> dict:
+def get_yield_info(zip: str, crop: str, acres: str, ppm: str, name: str, number: str) -> dict:
     forecast: dict = weather.get_forecast(zip)
     current_ppm: int = int(ppm)
     
@@ -98,4 +98,4 @@ def get_yield_info(zip: str, crop: str, acres: str, ppm: str) -> dict:
     try:
         return forecast
     finally:
-        generation.generate_response("Raghav", total_price, wp_sf, sp_sf, ps, pw, pf, forecast["image"])
+        generation.generate_response(name, number, total_price, wp_sf, sp_sf, ps, pw, pf, forecast["image"])

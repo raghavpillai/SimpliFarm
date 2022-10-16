@@ -12,16 +12,16 @@ def _default_index() -> str:
     """
     return "Hi"
 
-def _main_api(zip: str, crop: str, acres: str, ppm: str) -> str:
+def _main_api(zip: str, crop: str, acres: str, ppm: str, name: str, number: str) -> str:
     """
     Main API function
     """
-    ret = actions.get_yield_info(zip, crop, acres, ppm)
+    ret = actions.get_yield_info(zip, crop, acres, ppm, name, number)
     return json.dumps(ret)
 
 routes: Dict = {
     "/": _default_index,
-    "/api/<zip>/<crop>/<acres>/<ppm>": _main_api
+    "/api/<zip>/<crop>/<acres>/<ppm>/<name>/<number>": _main_api
 }
 
 def create_routes():
