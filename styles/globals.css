@@ -110,3 +110,7 @@ a {
 .envisionBG{
   background-color: #56e0ff49;
 }
+
+html {
+  scroll-behavior: smooth;
+}
