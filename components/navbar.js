@@ -2,19 +2,27 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import {onAuthStateChanged} from "firebase/auth";
 import { signInWithGoogle, signOutWithGoogle, getUser, auth } from '../lib/firebase-client';
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
     
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const router = useRouter()
 
     // const [name, setName] = useState("Hello User")
         onAuthStateChanged(auth, (user) => {
             if (user){
                 setUser(user)
+
+                if (router.asPath === '/') {
+                    router.push('/form')
+                }
             }
             else {
                 setUser(null)
+
+                router.push('/')
             }
             setLoading(false)
         })
