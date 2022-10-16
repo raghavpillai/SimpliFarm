@@ -3,27 +3,22 @@ import React, {Component, useState} from 'react';
 import {Chart as ChartJS} from "chart.js/auto";
 import { Doughnut } from 'react-chartjs-2';
 
-export default function CostSplit(props) {
+export default function Score(props) {
 
     const options = { 
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: true,
+        legend: {
+            display: false
+        }
     }
 
     const data = {
-        labels: ['Water Cost in Dollars', 'Fertilzer Cost in Dollars'],
+        labels: ['Positive', 'Negative'],
         datasets: [
           {
             label: '# of Votes',
-            data: props.data,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-            ],
+            data: [props.data, 100-props.data],
             borderColor: [
               'rgba(255, 99, 132, 1)',
               'rgba(54, 162, 235, 1)',
@@ -32,12 +27,24 @@ export default function CostSplit(props) {
               'rgba(153, 102, 255, 1)',
               'rgba(255, 159, 64, 1)',
             ],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+            ],
             borderWidth: 1,
           },
         ],
       };
 
     return (
-        <Doughnut className ="self-center" options={options} data={data} />
+        <>
+            <Doughnut className ="self-center" options={options} data={data} />
+            <p className="font-bold">{parseInt(props.data)}%</p>
+        </>
+
     )
 }
