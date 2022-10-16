@@ -52,26 +52,38 @@ a {
   box-shadow: rgba(38, 57, 77, 0.592) 0px 0px 50px -5px;
 }
 
-.input-box {
-  background-color: white;
-  color: #FDFCFF;
-  transition: all ease-in-out .1s;
-  padding-top: 1rem;
-  text-align: center;
-  align-self: center;
+.input {
+  outline: none;
+  transition: all 0.1s ease-in-out;
+  color: black;
+}
+
+.input:focus {
+  transition: all 0.1s ease-in-out;
+  border-color: rgb(0, 153, 255);
+  box-shadow: 0px 0px .2em 0px rgb(0, 153, 255);
+}
+
+.option:hover {
+  background-color: rgb(92, 168, 219);
 }
 
 .button {
-  background-color: #FDFCFF;
+  background-color: #008cff;
   padding: .1rem;
-  color: black;
+  color: rgb(255, 255, 255);
   transition: all 0.1s ease-in-out;
+  justify-content: center;
+  align-self: center;
+  width: 25%;
+  height: auto;
+  margin-left: 37.5%;
 }
 
 .button:hover {
   transition: all 0.1s ease-in-out;
   border-color: #cccccc;
-  background-color: #cccccc;
+  background-color: #55b3ff;
 }
 
 .image-background {
