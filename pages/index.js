@@ -35,9 +35,11 @@ export default function Home() {
               <div className="bg-[#56E1FF] opacity-50 drop w-24 h-24"></div>
             </div>
           </div>
+          
           <div className='2xl:text-4xl text-3xl text-[#2B2B2B]'>
             Do more, save more. Calculate true farming needs and track resource usage.
           </div>
+          <br></br>
           <a href="#learnMore" className="rounded-full 2xl:text-xl bg-[#6BBDF8] inline-block px-4 py-2 font-semibold z-50">Learn More</a>
         </div>
       </div>
