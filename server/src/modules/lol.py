@@ -2,8 +2,8 @@ import src.modules.weather as weather
 import src.modules.analyzer as analyzer
 import src.modules.model as model
 
-WATER_PRICE = 0.005
-FERTILIZER_PRICE = 0.002
+WATER_PRICE = 0.002
+FERTILIZER_PRICE = 0.005
 
 crops: dict = {
     "Wheat": {
@@ -75,14 +75,14 @@ def get_yield_info(zip: str, crop: str, acres: str, ppm: str) -> dict:
 
         forecast["total_score"] = analyzer.clamp(forecast["total_score"] - ( pow(stress_score, 1.2) * 20), 0, 100)
     
-    forecast["total_price"] = (total_water * WATER_PRICE) + (total_fert + FERTILIZER_PRICE)
     forecast["used_water_sf"] = total_water # liters
     forecast["used_fert_sf"] = total_fert # kilograms
     forecast["total_used_water"] = total_water * 4046.86 * int(acres)
     forecast["total_used_fert"] = total_fert * 4046.86 * int(acres)
+    forecast["total_price"] = (forecast["total_used_water"] * WATER_PRICE) + (forecast["total_used_fert"] * FERTILIZER_PRICE)
 
     forecast["predicted_stress"] = model.create_linear_regression(x_arr, y_stress_arr)
     forecast["predicted_water"] = model.create_linear_regression(x_arr, y_water_arr)
     forecast["predicted_fert"] = model.create_linear_regression(x_arr, y_fert_arr)
-    
+
     return forecast

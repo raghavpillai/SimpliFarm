@@ -1,7 +1,7 @@
 import math
 
-WATER_PRICE = 0.005
-FERTILIZER_PRICE = 0.002
+WATER_PRICE = 0.002
+FERTILIZER_PRICE = 0.005
 
 def clamp(num, min_value, max_value):
    return max(min(num, max_value), min_value)
@@ -29,7 +29,8 @@ def water_score(base_ppm: int, target_ppm: int, base_water: int, rainfall: float
     # 2mm of rain is 100% extra
     ppm_needed: float = target_ppm - base_ppm
     humidity_multiplier: float = ((-0.017*humidity)+1.88)
-    water_needed: float = (base_water - rainfall) * (humidity_multiplier)
+    
+    water_needed: float = ( (base_water*0.1) - rainfall*0.5) * (humidity_multiplier) - 1
 
     values: dict = {
         "fert": 0,
