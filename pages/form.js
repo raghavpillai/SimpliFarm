@@ -11,7 +11,6 @@ const fields = ["zip-code", "acres", "soilPPM", "crop-type"];
 class Form extends Component {
 
 
-
     constructor(){
         super();
         this.state = {
