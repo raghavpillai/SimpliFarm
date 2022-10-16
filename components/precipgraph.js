@@ -3,7 +3,7 @@ import React, {Component, useState} from 'react';
 import {Chart as ChartJS} from "chart.js/auto";
 import { Line } from 'react-chartjs-2';
 
-export default function Humidity(props) {
+export default function Precip(props) {
 
     const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -22,7 +22,7 @@ export default function Humidity(props) {
         labels: labels,
         datasets: [
             {
-                label: "Humidity Percentage",
+                label: "Precipitation in milimeters",
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: '#FDFCFF',
                 data: props.data,
