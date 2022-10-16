@@ -17,13 +17,18 @@ export default function Form() {
 
     const router = useRouter()
 
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
-
-
     function handleSubmit(event){
         handleChange(event)
+        console.log(zipCode, acres, currentSoilPPM, phone, cropType)
+        fetch(`http://127.0.0.1:5000/api/${zipCode}/${cropType}/${acres}/${currentSoilPPM}`, {
+            method: 'GET'
+        }).then(res => res.json())
+        .then(res => {
+            console.log(res)
+            localStorage.removeItem('obj')
+            localStorage.setItem('obj', JSON.stringify(res));
+            router.push('/dashboard')
+        })
     }
 
     useEffect(()=>{
@@ -47,14 +52,7 @@ export default function Form() {
         setCurrentSoilPPM(currentPPMInput)
         setPhone(phoneNum)
         setCropType(cropInput)
-        fetch(`http://127.0.0.1:5000/api/${zipCode}/${cropType}/${acres}/${currentSoilPPM}`, {
-            method: 'GET'
-        }).then(res => res.json())
-        .then(res => {
-            console.log(res)
-            localStorage.setItem('obj', JSON.stringify(res));
-            router.push('/dashboard')
-        })
+        console.log(zipCode, acres, currentSoilPPM, phone, cropType)
     }
 
 
@@ -88,7 +86,7 @@ export default function Form() {
                         <input className='w-full border-2 rounded-lg p-2 mb-6 input' 
                             type="text"
                             id="zip-code"
-                            // onInput={handleChange}
+                            onInput={handleChange}
                         >
                         </input>
 
@@ -98,7 +96,7 @@ export default function Form() {
                         <input className='w-full border-2 rounded-lg p-2 mb-6 input' 
                             type="text"
                             id="acres"
-                            // onInput={handleChange}
+                            onInput={handleChange}
                         >
                         </input>
 
@@ -108,7 +106,7 @@ export default function Form() {
                         <input className='w-full border-2 rounded-lg p-2 mb-6 input' 
                             type="text"
                             id="cur soil ppm"
-                            // onInput={handleChange}
+                            onInput={handleChange}
                         >
                         </input>
 
@@ -118,7 +116,7 @@ export default function Form() {
                         <input className='w-full border-2 rounded-lg p-2 mb-6 input' 
                             type="text"
                             id="phone"
-                            // onInput={handleChange}
+                            onInput={handleChange}
                         >
                         </input>
 
