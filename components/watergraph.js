@@ -17,7 +17,7 @@ export default function WaterGraph(props) {
         },
         plugins: {
             legend: {
-                display: false
+                display: true
             },
         }
     }

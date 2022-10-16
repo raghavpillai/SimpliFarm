@@ -61,7 +61,7 @@ export default function Dashboard() {
                     </div>
                     {/* <div className='absolute translate-x-1/2 -translate-y-1/2 top-1/2 left-1/4 -ml-24 z-0'><img className="w-[50%]  rounded-[1rem] border z-0" src={dump.image}/></div> */}
                 </div>
-                <div className='flex justify-center z-0'><img className="w-[55%]  rounded-[1rem] border z-0" src={dump.image}/></div>
+                <div className='flex justify-center z-0'><img className="w-[55%] shadow-2xl rounded-[1rem] border z-0" src={dump.image}/></div>
                 
                 <div>
                     <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Fertility Rating</div>

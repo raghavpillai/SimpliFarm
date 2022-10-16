@@ -17,7 +17,7 @@ export default function CostSplit(props) {
         },
         plugins: {
             legend: {
-                display: false
+                display: true
             },
         }
     }

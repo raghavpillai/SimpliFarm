@@ -17,7 +17,7 @@ export default function TempGraph(props) {
         },
         plugins: {
             legend: {
-                display: false
+                display: true
             },
         }
     }

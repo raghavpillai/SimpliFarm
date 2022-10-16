@@ -17,7 +17,7 @@ export default function Humidity(props) {
         },
         plugins: {
             legend: {
-                display: false
+                display: true
             },
         }
     }

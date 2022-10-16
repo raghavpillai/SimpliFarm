@@ -16,7 +16,7 @@ export default function Score(props) {
         responsive: true,
         maintainAspectRatio: true,
         legend: {
-            display: false
+            display: true
         },
         animation: {
           duration: 2500,

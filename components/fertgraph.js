@@ -17,7 +17,7 @@ export default function FertGraph(props) {
         },
         plugins: {
             legend: {
-                display: false
+                display: true
             },
         }
     }

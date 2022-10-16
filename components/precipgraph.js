@@ -17,7 +17,7 @@ export default function Precip(props) {
         },
         plugins: {
             legend: {
-                display: false
+                display: true
             },
         }
     }
