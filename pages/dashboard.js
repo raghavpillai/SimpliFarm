@@ -9,6 +9,7 @@ import CostSplit from '../components/costsplit';
 import Score from '../components/score'
 import FertGraph from '../components/fertgraph';
 import Humidity from '../components/humidity';
+import Precip from '../components/precipgraph';
 
 
 
@@ -90,7 +91,7 @@ export default function Dashboard() {
                     <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Humidity</div>
                     <div className='w-1/1 h-auto items-center'>
                         <div className='self-center w-3/4 h-auto ml-[10%]'>
-                            <Humidity data={[tempHi, tempLo]} />
+                            <Humidity data={humidity} />
                         </div>
                     </div>
                 </div>
@@ -103,6 +104,17 @@ export default function Dashboard() {
                         </div>
                     </div>
                 </div>
+
+                <div>
+                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Costs per day for water and Fertilizer</div>
+                    <div className='w-1/1 h-auto items-center'>
+                        <div className='self-center w-3/4 h-auto ml-[10%]'>
+                            <Precip data={precip} />
+                        </div>
+                    </div>
+                </div>
+
+
 
             </div>
 
