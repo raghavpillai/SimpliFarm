@@ -27,17 +27,15 @@ def get_temp_stress(max_temp: int, min_temp: int, local_max: float, local_min: f
 def water_score(base_ppm: int, target_ppm: int, base_water: int, rainfall: float, humidity: float) -> dict:
     # Assume we need 5mm of rain per day to maintain PPM
     # 2mm of rain is 100% extra
-    ppm_needed: float = target_ppm - base_ppm
     humidity_multiplier: float = ((-0.017*humidity)+1.88)
-    
-    water_needed: float = ( (base_water*0.1) - rainfall*0.5) * (humidity_multiplier) - 1
-
+    water_needed: float = ( (base_water*0.1) - rainfall*0.5) * (humidity_multiplier)
     values: dict = {
         "fert": 0,
         "water": clamp(water_needed,0,1000),
         "new_ppm": target_ppm * (1+ pow( (1-humidity_multiplier),6))
     }
-
+    ppm_needed: float = target_ppm - base_ppm
+    
     if ppm_needed > 0:
         values["fert"] += ppm_needed/1000 # grams, 10-20-10 fertilizer contains 10 percent nitrogen, 20 percent phosphorous and 10 percent potassium by weight
     else:
