@@ -4,6 +4,7 @@ import { NativeSelect, InputLabel, Select, OutlinedInput, MenuItem } from '@mui/
 import Navbar from '../components/navbar';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
+import { getUser, postData } from '../lib/firebase-client';
 
 export default function Form() {
 
@@ -34,7 +35,7 @@ export default function Form() {
         setLoaded(true)
     }, [])
 
-    function handleChange(event){
+    const handleChange = async (event) => {
         event.preventDefault();
         const zipCodeInput = document.getElementById('zip-code').value
         const acresInput = document.getElementById('acres').value
@@ -51,7 +52,24 @@ export default function Form() {
         setCurrentSoilPPM(currentPPMInput)
         setPhone(phoneNum)
         setCropType(cropInput)
-        console.log(zipCode, acres, currentSoilPPM, phone, cropType)
+
+        const farmData = {
+            'zipZode': zipCodeInput,
+            'acre': acresInput,
+            'soilPPM': currentPPMInput,
+            'phone': phoneNum,
+            'crop': cropInput,
+        }
+        await postData(farmData);
+        console.log("fetching")
+        fetch(`http://127.0.0.1:5000/api/${zipCodeInput}/${cropInput}/${acresInput}/${currentPPMInput}`, {
+            method: 'GET'
+        }).then(res => res.json())
+        .then(res => {
+            console.log(res)
+            localStorage.setItem('obj', JSON.stringify(res));
+            router.push('/dashboard')
+        })
     }
 
 

@@ -5,8 +5,12 @@ import { Doughnut } from 'react-chartjs-2';
 
 export default function Score(props) {
     let fill = 'rgba(255, 99, 132, 0.2)'
-    if (props.data > 50){
+    if (props.data > 70){
       fill = 'rgba(80, 200, 120, 0.7)'
+    }else if (props.data > 40){
+      fill = 'rgba(201, 204, 63, 0.7)'
+    }else{
+      fill = 'rgba(237, 41, 57, 0.7)'
     }
     const options = { 
         responsive: true,

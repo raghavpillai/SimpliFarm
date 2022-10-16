@@ -56,7 +56,7 @@ export default function Dashboard() {
                 </div>
 
                 <div className='align-center'>
-                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center'>Fertilizer Usage for Wheat</div>
+                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center'>Fertilizer Usage</div>
                     <div className='w-1/1 h-auto items-center'>
                         <div className='self-center w-3/4 h-auto ml-[10%]'>
                             <FertGraph data={fert} />
@@ -65,7 +65,7 @@ export default function Dashboard() {
                 </div>
                 
                 <div className='align-center'>
-                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center'>Water Consumption for Wheat</div>
+                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center'>Water Consumption</div>
                     <div className='w-1/1 h-auto items-center'>
                         <div className='self-center w-3/4 h-auto ml-[10%]'>
                             <WaterGraph data={waterlevels} />
@@ -78,7 +78,7 @@ export default function Dashboard() {
                 </div>
 
                 <div>
-                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Temperatures over 14 days</div>
+                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Temperatures</div>
                     <div className='w-1/1 h-auto items-center'>
                         <div className='self-center w-3/4 h-auto ml-[10%]'>
                             <TempGraph data={[tempHi, tempLo]} />
