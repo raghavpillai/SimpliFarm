@@ -82,3 +82,9 @@ a {
   scale: 1.1;
   position: absolute;
 }
+
+.nav-box {
+  width: 100vw;
+  background-color: #cccccc;
+  height: 10vh;
+}

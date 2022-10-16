@@ -54,7 +54,7 @@ class Form extends Component {
                     </div>
 
                     <Navbar />
-                    <div className="grid absolute place-items-left bg-[#ecebeg] drop-shadow-lg w-[50%] h-[75vh] translate-y-[25vh]">
+                    <div className="grid absolute place-items-left bg-[#ecebeg] drop-shadow-lg w-[50%] h-[75vh] translate-x-[50%] translate-y-[30%]">
                         <div className="grid place-items-center bg-[#108ca4] p-5 rounded-lg m-0 space-y-0 drop-shadow-md text-white font-semibold">
                             <div className="grid grid-cols-1">
                                 <TextField onChange={this.handlechange} className="input-box rounded" id="outlined-basic zip-code" label="ZIP Code" variant="filled" />
