@@ -4,7 +4,7 @@
 import json
 from typing import Dict
 from flask import current_app as app
-import src.modules.lol as lol
+import src.modules.actions as actions
 
 def _default_index() -> str:
     """
@@ -16,7 +16,7 @@ def _main_api(zip: str, crop: str, acres: str, ppm: str) -> str:
     """
     Main API function
     """
-    ret = lol.get_yield_info(zip, crop, acres, ppm)
+    ret = actions.get_yield_info(zip, crop, acres, ppm)
     return json.dumps(ret)
 
 routes: Dict = {

@@ -3,8 +3,7 @@ import React, {Component, useEffect, useState} from 'react';
 import { NativeSelect, InputLabel, Select, OutlinedInput, MenuItem } from '@mui/material';
 import Navbar from '../components/navbar';
 import Link from 'next/link';
-
-const fields = ["zip-code", "acres", "soilPPM", "crop-type"];
+import { useRouter } from 'next/router'
 
 export default function Form() {
 
@@ -12,9 +11,11 @@ export default function Form() {
     const [zipCode, setZipCode] = useState('')
     const [acres, setAcres] = useState('');
     const [currentSoilPPM, setCurrentSoilPPM] = useState('');
-    const [expectedSoilPPM, setExpectedSoilPPM] = useState('');
+    const [phone, setPhone] = useState('');
     const [cropType, setCropType] = useState('');
     const [errorMessage, setErrorMessage] = useState('')
+
+    const router = useRouter()
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -29,18 +30,14 @@ export default function Form() {
         setLoaded(true)
     }, [])
 
-    const checkError = () => {
-
-    }
-
     function handleChange(event){
         event.preventDefault();
         const zipCodeInput = document.getElementById('zip-code').value
         const acresInput = document.getElementById('acres').value
         const currentPPMInput = document.getElementById('cur soil ppm').value
-        const expectedPPMInput = document.getElementById('exp soil ppm').value
+        const phoneNum = document.getElementById('phone').value
         const cropInput = document.getElementById('crop-type').value
-        if (zipCodeInput === '' || acresInput==='' || currentPPMInput==='' || expectedPPMInput==='' || cropInput===''){
+        if (zipCodeInput === '' || acresInput==='' || currentPPMInput==='' || phoneNum==='' || cropInput===''){
             setErrorMessage("The form contains incorrect fields");
             return;
         }
@@ -48,10 +45,16 @@ export default function Form() {
         setZipCode(zipCodeInput)
         setAcres(acresInput)
         setCurrentSoilPPM(currentPPMInput)
-        setExpectedSoilPPM(expectedPPMInput)
+        setPhone(phoneNum)
         setCropType(cropInput)
-        console.log(zipCode, acres, currentSoilPPM, expectedSoilPPM, cropType)
-
+        fetch(`http://127.0.0.1:5000/api/${zipCode}/${cropType}/${acres}/${currentSoilPPM}`, {
+            method: 'GET'
+        }).then(res => res.json())
+        .then(res => {
+            console.log(res)
+            localStorage.setItem('obj', JSON.stringify(res));
+            router.push('/dashboard')
+        })
     }
 
 
@@ -110,11 +113,11 @@ export default function Form() {
                         </input>
 
                         <label className=''>
-                            Expected Soil PPM
+                            Phone number
                         </label>
                         <input className='w-full border-2 rounded-lg p-2 mb-6 input' 
                             type="text"
-                            id="exp soil ppm"
+                            id="phone"
                             // onInput={handleChange}
                         >
                         </input>

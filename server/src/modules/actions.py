@@ -1,6 +1,7 @@
 import src.modules.weather as weather
 import src.modules.analyzer as analyzer
 import src.modules.model as model
+import src.modules.generation as generation
 
 WATER_PRICE = 0.002
 FERTILIZER_PRICE = 0.005
@@ -85,4 +86,14 @@ def get_yield_info(zip: str, crop: str, acres: str, ppm: str) -> dict:
     forecast["predicted_water"] = model.create_linear_regression(x_arr, y_water_arr)
     forecast["predicted_fert"] = model.create_linear_regression(x_arr, y_fert_arr)
 
-    return forecast
+    total_price = round(forecast["total_price"], 2)
+    wp_sf = round(forecast["used_water_sf"], 2)
+    sp_sf = round(forecast["total_used_fert"], 2)
+    ps = analyzer.clamp(round(forecast["predicted_stress"][0], 2), 0, 100000)
+    pw = analyzer.clamp(round(forecast["predicted_water"][0], 2), 0, 100000)
+    pf = analyzer.clamp(round(forecast["predicted_fert"][0], 2), 0, 100000)
+    
+    try:
+        return forecast
+    finally:
+        generation.generate_response("Raghav", total_price, wp_sf, sp_sf, ps, pw, pf, forecast["image"])
