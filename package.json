@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^9.12.1",
     "chart.js": "^3.9.1",
     "faker": "^6.6.6",
     "next": "12.3.1",

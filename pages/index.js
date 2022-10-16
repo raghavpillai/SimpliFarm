@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import Navbar from '../components/navbar'
 export default function Home() {
   return (
     <>
@@ -10,13 +10,13 @@ export default function Home() {
       <meta name="description" content="Get maximum crop yield" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-
+    <Navbar></Navbar>
     {/* Water drops */}
     <div className="bg-[#56E1FF] opacity-60 drop absolute top-28 right-24 w-32 h-32"></div>
     <div className="bg-[#56E1FF] opacity-50 drop absolute top-44 right-14 w-32 h-32"></div>
 
     {/* Rectangle */}
-    <div className="w-[40rem] h-[15rem] opacity-20 bg-[#56E1FF] absolute -top-32 -right-32 rotate-[20deg]"></div>
+    <div className="w-[50rem] h-[15rem] opacity-20 bg-[#56E1FF] absolute -top-28 -right-40 rotate-[20deg]"></div>
     <div className="softGlow absolute h-[45rem] w-[45rem] left-0 -translate-x-1/2"></div>
     
     <div className="flex-col">
