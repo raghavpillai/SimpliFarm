@@ -55,12 +55,13 @@ export default function Dashboard() {
             <div className='grid grid-cols-2 grid-rows-4 align-center justify-center items-center text-center z-10 '>
 
 
-                <div className='font-bold align-center justify-center items-center text-[3rem]  text-left relative'>
-                    <div className='z-20 ml-24'>
+                <div className='font-bold align-center justify-center items-center text-[3rem]  text-center relative'>
+                    <div className=' z-50'>
                     {dump.name}, {dump.state}<br></br>{dump.country}
                     </div>
-                    <div className='absolute translate-x-1/2 -translate-y-1/2 top-1/2 left-1/4 -ml-28'><img className="w-[60%]  rounded-[1rem] border z-0" src={dump.image}/></div>
+                    {/* <div className='absolute translate-x-1/2 -translate-y-1/2 top-1/2 left-1/4 -ml-24 z-0'><img className="w-[50%]  rounded-[1rem] border z-0" src={dump.image}/></div> */}
                 </div>
+                <div className='flex justify-center z-0'><img className="w-[55%]  rounded-[1rem] border z-0" src={dump.image}/></div>
                 
                 <div>
                     <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Fertility Rating</div>
