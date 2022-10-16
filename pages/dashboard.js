@@ -8,7 +8,6 @@ import WaterGraph from '../components/watergraph';
 import TempGraph from '../components/tempgraph';
 import CostSplit from '../components/costsplit';
 
-const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let waterlevels = []
 let fert = []
 let tempHi = []

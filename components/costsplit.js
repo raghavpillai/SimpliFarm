@@ -5,8 +5,6 @@ import { Doughnut } from 'react-chartjs-2';
 
 export default function CostSplit(props) {
 
-    const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
     const options = { 
         responsive: true,
         maintainAspectRatio: true

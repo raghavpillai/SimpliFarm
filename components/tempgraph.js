@@ -5,7 +5,7 @@ import { Line } from 'react-chartjs-2';
 
 export default function TempGraph(props) {
 
-    const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     const options = { 
         responsive: true,
