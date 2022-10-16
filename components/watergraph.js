@@ -9,14 +9,20 @@ export default function WaterGraph(props) {
 
     const options = { 
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: true,
+        animation: {
+            duration: 3500,
+            easing: 'easeInOutBack',
+            delay: 250,
+            colors: { type: 'color', properties: ['borderColor', 'backgroundColor'], from: 'transparent' }
+        }
     }
 
     const data = {
         labels: labels,
         datasets: [
             {
-                label: "Milimeters of Water Needed",
+                label: "",
                 backgroundColor: "#FDFCFF",
                 borderColor: "#56E1FF",
                 data: props.data,

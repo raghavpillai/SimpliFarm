@@ -9,7 +9,13 @@ export default function FertGraph(props) {
 
     const options = { 
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: true,
+        animation: {
+            duration: 3500,
+            easing: 'easeInOutBack',
+            delay: 250,
+            colors: { type: 'color', properties: ['borderColor', 'backgroundColor'], from: 'transparent' }
+        }
     }
 
     const data = {

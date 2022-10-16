@@ -9,20 +9,26 @@ export default function TempGraph(props) {
 
     const options = { 
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: true,
+        animation: {
+            duration: 3500,
+            easing: 'easeInOutBack',
+            delay: 250,
+            colors: { type: 'color', properties: ['borderColor', 'backgroundColor'], from: 'transparent' }
+        }
     }
 
     const data = {
         labels: labels,
         datasets: [
             {
-                label: "High temperatures in Fahrenheit",
+                label: "",
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: '#FDFCFF',
                 data: props.data[0],
             },
             {
-                label: "Low temperatures in Fahrenheit",
+                label: "",
                 backgroundColor: "#FDFCFF",
                 borderColor: "#56E1FF",
                 data: props.data[1],
