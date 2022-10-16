@@ -25,7 +25,7 @@ export default function Home() {
           <div className="text-9xl font-extrabold">
             Farmers United
           </div>
-          <div>
+          <div className='text-4xl'>
             Do more, save more. Calculate true water needs and track water usage.
           </div>
           <div className="rounded-full bg-[#6BBDF8] inline-block px-4 py-2 font-semibold">Start now</div>
