@@ -36,53 +36,54 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid place-items-center bg-[#12a1c0] drop-shadow-lg py-10 space-y-10 text-white px-20">
-        <div className="text-7xl font-semibold py-5">How it works.</div>
+      <div className="flex flex-col items-center bg-[#12a1c0] drop-shadow-lg py-10 text-white relative overflow-hidden">
+        {/* stripe */}
+        <div className='absolute top-0 -left-44 w-[120rem] h-[35rem] bg-[#99E3F4] z-0 -rotate-[30deg] shadow'></div>
 
-        <div className="grid grid-cols-2 justify-items-center items-center w-full">
-          <div className="text-7xl font-extrabold text-right">
+        <div className="text-7xl font-semibold py-5 z-10">How it works.</div>
+        <div className='flex items-center my-6 z-10'>
+          <div className='text-7xl font-extrabold mr-32 -ml-32'>
             1
           </div>
-
-          <div className="grid grid-rows-2 place-items-center bg-[#108ca4] py-5 px-10 rounded-lg w-full">
+          <div className='bg-[#108ca4] py-5 px-10 rounded-lg min-w-[35rem] max-w-[35rem]'>
             <div className="font-bold text-3xl">
               Enter your data.
             </div>
-            <div>
+            <div className='text-lg'>
               Provide us your ZIP code, size of land, crop type, and soil PPM.
             </div>
           </div>
+
         </div>
-        
-        <div className="grid grid-cols-2 justify-items-center items-center w-full">
-          <div className="text-7xl font-extrabold">
+        <div className='flex items-center my-6 z-10'>
+          <div className='text-7xl font-extrabold mr-32 -ml-32'>
             2
           </div>
-
-          <div className="grid grid-rows-2 place-items-center bg-[#108ca4] px-10 pb-5 rounded-lg w-full">
+          <div className='bg-[#108ca4] py-5 px-10 rounded-lg min-w-[35rem] max-w-[35rem]'>
             <div className="font-bold text-3xl">
               Analyze your results.
             </div>
-            <div>
+            <div className='text-lg'>
               We'll crunch your data and tell you the optimal fertilizer and water amount and average temperature stress for your plot of land, location, and crop based on weather predictions, agricultural research, and our extensive data sets. We do the heavy lifting so you don't have to.
             </div>
           </div>
-        </div>
 
-        <div className="grid grid-cols-2 justify-items-center items-center w-full">
-          <div className="text-7xl font-extrabold">
+        </div>
+        <div className='flex items-center my-6 z-10'>
+          <div className='text-7xl font-extrabold mr-32 -ml-32'>
             3
           </div>
-
-          <div className="grid grid-rows-2 place-items-center bg-[#108ca4] py-5 px-10 rounded-lg w-full">
+          <div className='bg-[#108ca4] py-5 px-10 rounded-lg min-w-[35rem] max-w-[35rem]'>
             <div className="font-bold text-3xl">
               Start watering!
             </div>
-            <div>
+            <div className='text-lg'>
               Start tending to your crops and check back regularly for more data predictions.
             </div>
           </div>
+
         </div>
+
 
 
         
