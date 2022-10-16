@@ -48,3 +48,43 @@ a {
   background: rgb(107,60,182);
   background: linear-gradient(rgba(25,4,46,0) 0%, rgba(86, 224, 255, 0.15) 70%);
 }
+.shadow {
+  box-shadow: rgba(38, 57, 77, 0.592) 0px 0px 50px -5px;
+}
+
+.input-box {
+  background-color: white;
+  color: #FDFCFF;
+  transition: all ease-in-out .1s;
+  padding-top: 1rem;
+  text-align: center;
+  align-self: center;
+}
+
+.button {
+  background-color: #FDFCFF;
+  padding: .1rem;
+  color: black;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+  transition: all 0.1s ease-in-out;
+  border-color: #cccccc;
+  background-color: #cccccc;
+}
+
+.image-background {
+  background: url("../public/shutterstock-653708227.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(.5rem);
+  filter: contrast(.5rem);
+  scale: 1.1;
+  position: absolute;
+}
+
+.nav-box {
+  width: 100vw;
+  background-color: #cccccc;
+  height: 10vh;
+}

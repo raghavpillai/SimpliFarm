@@ -2,19 +2,27 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import {onAuthStateChanged} from "firebase/auth";
 import { signInWithGoogle, signOutWithGoogle, getUser, auth } from '../lib/firebase-client';
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
     
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const router = useRouter()
 
     // const [name, setName] = useState("Hello User")
         onAuthStateChanged(auth, (user) => {
             if (user){
                 setUser(user)
+
+                if (router.asPath === '/') {
+                    router.push('/form')
+                }
             }
             else {
                 setUser(null)
+
+                
             }
             setLoading(false)
         })
@@ -30,6 +38,7 @@ export default function Navbar() {
     const signOutWithGoogleFunct = () => {
         signOutWithGoogle();
         alert("You have signed out")
+        router.push('/')
         // setUser(null)
     }
 
@@ -41,9 +50,9 @@ export default function Navbar() {
             <div className='font-black text-3xl'>
                 FU
             </div>
-            <div>
+            {/* <div>
                 {user !== null && ("Hello " + user.displayName)}
-            </div>
+            </div> */}
             {!loading && (user === null ? 
                 <button className="bg-white px-4 py-2 rounded-full flex z-50" onClick={()=>signInWithGoogleFunct()}>
                     <Image src="/assets/googleicon.png" width={30} height={30}></Image>
