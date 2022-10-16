@@ -45,7 +45,7 @@ export default function Dashboard() {
 
 
 
-                <div className='font-bold align-center justify-center items-center text-center text-[3rem]'>{dump.name}, {dump.state}, {dump.country}</div>
+                <div className='font-bold align-center justify-center items-center text-center text-[3rem]'>{dump.name}, {dump.state}<br></br>{dump.country}</div>
                 
                 <div>
                     <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Fertility Rating</div>

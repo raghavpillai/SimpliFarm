@@ -20,6 +20,23 @@ export default function Score(props) {
         }
     }
 
+    const plugins = [{
+      beforeDraw: function(chart) {
+       var width = chart.width,
+           height = chart.height,
+           ctx = chart.ctx;
+           ctx.restore();
+           var fontSize = (height / 160).toFixed(2);
+           ctx.font = fontSize + "font-bold";
+           ctx.textBaseline = "top";
+           var text = parseInt(props.data) + "%",
+           textX = Math.round((width - ctx.measureText(text).width) / 2),
+           textY = height / 2;
+           ctx.fillText(text, textX, textY);
+           ctx.save();
+      } 
+    }]
+
     const data = {
         labels: [],
         datasets: [
@@ -47,10 +64,11 @@ export default function Score(props) {
         ],
       };
 
+      
+
     return (
         <>
-            <Doughnut className ="self-center" options={options} data={data} />
-            <p className="font-bold">{parseInt(props.data)}%</p>
+            <Doughnut className ="self-center" options={options} data={data} plugins={plugins} />
         </>
 
     )
