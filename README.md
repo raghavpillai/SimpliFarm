@@ -27,12 +27,10 @@ Thanks for reading, and we hope you enjoyed hearing about SimpliFarm as much as 
 
 ## Contributors
 
-Nam Truong - Front End
-Rishabh Vemparala - Full Stack
-Raghav Pillai - Back End
-Scott Tran - Front End
-
-
+Nam Truong - Front End\
+Rishabh Vemparala - Full Stack\
+Raghav Pillai - Back End\
+Scott Tran - Front End\
 
 ## Getting Started
 
