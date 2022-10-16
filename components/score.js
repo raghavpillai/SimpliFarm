@@ -38,7 +38,10 @@ export default function Score(props) {
            textY = height / 2;
            ctx.fillText(text, textX, textY);
            ctx.save();
-      } 
+      },
+      legend: {
+        display: false
+      },
     }]
 
     const data = {

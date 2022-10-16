@@ -113,7 +113,7 @@ export default function Dashboard() {
                 </div>
 
                 <div>
-                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Costs per day for water and Fertilizer</div>
+                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Daily Cost</div>
                     <div className='w-1/1 h-auto items-center'>
                         <div className='self-center w-3/4 h-auto ml-[10%]'>
                             <CostSplit data={costs} />
@@ -122,7 +122,7 @@ export default function Dashboard() {
                 </div>
 
                 <div>
-                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Costs per day for water and Fertilizer</div>
+                    <div className='w-1/1 h-auto text-[2rem] font-bold text-center mt-4'>Precipitation</div>
                     <div className='w-1/1 h-auto items-center'>
                         <div className='self-center w-3/4 h-auto ml-[10%]'>
                             <Precip data={precip} />
@@ -141,7 +141,7 @@ export default function Dashboard() {
             <div className='w-1/1 align-center justify-center items-center text-center'>
                 <table className='w-3/4 align-center justify-center items-center text-center font-[1rem border-black translate-x-[12.5%] mt-3 mb-12 '>
                     <tr>
-                        <th className='text-3xl px-2'>Prediction for the next 30 days</th>
+                        <th className='text-3xl px-2'>30 Day Prediction</th>
                         <th className='text-3xl px-2'>Amount</th>
                         <th className='text-3xl px-2'>Confidence  </th>
                     </tr>
@@ -151,14 +151,14 @@ export default function Dashboard() {
                         <td className='text-2xl px-2'>{dump.predicted_fert[1]}</td>
                     </tr>
                     <tr>
-                        <td className='text-3xl px-2'>Stress</td>
-                        <td className='text-2xl px-2'>{dump.predicted_stress[0]}</td>
-                        <td className='text-2xl px-2'>{dump.predicted_stress[1]}</td>
-                    </tr>
-                    <tr>
                         <td className='text-3xl px-2'>Water Usage</td>
                         <td className='text-2xl px-2'>{dump.predicted_water[0]}</td>
                         <td className='text-2xl px-2'>{dump.predicted_water[1]}</td>
+                    </tr>
+                    <tr>
+                        <td className='text-3xl px-2'>Plant Stress</td>
+                        <td className='text-2xl px-2'>{dump.predicted_stress[0]}</td>
+                        <td className='text-2xl px-2'>{dump.predicted_stress[1]}</td>
                     </tr>
                 </table>
             </div>

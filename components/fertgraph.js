@@ -4,8 +4,7 @@ import {Chart as ChartJS} from "chart.js/auto";
 import { Line } from 'react-chartjs-2';
 
 export default function FertGraph(props) {
-
-    const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const labels = ["S", "M", "T", "W", "TH", "F", "S", "SU", "M", "T", "W", "TH", "F", "S"];
 
     const options = { 
         responsive: true,
@@ -15,6 +14,11 @@ export default function FertGraph(props) {
             easing: 'easeInOutBack',
             delay: 250,
             colors: { type: 'color', properties: ['borderColor', 'backgroundColor'], from: 'transparent' }
+        },
+        plugins: {
+            legend: {
+                display: false
+            },
         }
     }
 
