@@ -1,15 +1,51 @@
 import src.modules.weather as weather
 import src.modules.analyzer as analyzer
 
+WATER_PRICE = 0.005
+FERTILIZER_PRICE = 0.002
+
+crops: dict = {
+    "Wheat": {
+        "target_ppm": 50,
+        "min_temp": 54,
+        "max_temp": 78,
+        "base_water": 4.5
+    },
+    "Cotton": {
+        "target_ppm": 80,
+        "min_temp": 70,
+        "max_temp": 100,
+        "base_water": 2.5
+    },
+    "Corn": {
+        "target_ppm": 40,
+        "min_temp": 60,
+        "max_temp": 95,
+        "base_water": 6
+    },
+    "Soybean": {
+        "target_ppm": 30,
+        "min_temp": 65,
+        "max_temp": 90,
+        "base_water": 5
+    },
+    "Rice": {
+        "target_ppm": 10,
+        "min_temp": 70,
+        "max_temp": 90,
+        "base_water": 10
+    }
+}
+
 def get_yield_info(zip: str, crop: str, acres: str, ppm: str) -> dict:
     forecast: dict = weather.get_forecast(zip)
     current_ppm: int = int(ppm)
     
     # Given by crop
-    target_ppm: int = 250
-    base_water: int = 20
-    max_temp: int = 100
-    min_temp: int = 32
+    target_ppm: int = crops[crop]["target_ppm"]
+    base_water: int = crops[crop]["base_water"]
+    max_temp: int = crops[crop]["max_temp"]
+    min_temp: int = crops[crop]["min_temp"]
 
     forecast["days"] = []
     
@@ -26,9 +62,9 @@ def get_yield_info(zip: str, crop: str, acres: str, ppm: str) -> dict:
         total_water += ppm_score["water"]
         total_fert += ppm_score["fert"]
     
-    forecast["total_price"] = (total_water * 0.5) + (total_fert + 0.5)
-    forecast["total_water"] = total_water
-    forecast["total_fert"] = total_fert
-    forecast["needed_water"] = total_water * int(acres)
-    forecast["needed_fert"] = total_water * int(acres)
+    forecast["total_price"] = (total_water * WATER_PRICE) + (total_fert + FERTILIZER_PRICE)
+    forecast["total_water"] = total_water # liters
+    forecast["total_fert"] = total_fert # kilograms
+    forecast["needed_water"] = total_water * 4046.86 * int(acres)
+    forecast["needed_fert"] = total_fert * 4046.86 * int(acres)
     return forecast

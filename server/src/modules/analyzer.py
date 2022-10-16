@@ -1,5 +1,11 @@
 import math
 
+WATER_PRICE = 0.005
+FERTILIZER_PRICE = 0.002
+
+def clamp(num, min_value, max_value):
+   return max(min(num, max_value), min_value)
+
 def get_temp_stress(max_temp: int, min_temp: int, local_max: float, local_min: float) -> float:
     # Measure temperature stress, humidity
     midpoint: int = (max_temp+min_temp)/2
@@ -26,19 +32,19 @@ def water_score(base_ppm: int, target_ppm: int, base_water: int, rainfall: float
     
     values: dict = {
         "fert": 0,
-        "water": water_needed,
+        "water": clamp(water_needed,0,1000),
         "new_ppm": target_ppm * (1+ pow( (1-humidity_multiplier),6))
     }
 
     if ppm_needed > 0:
         values["fert"] += ppm_needed/1000 # grams, 10-20-10 fertilizer contains 10 percent nitrogen, 20 percent phosphorous and 10 percent potassium by weight
     else:
-        values["water"] += ppm_needed/water_needed
+        values["water"] += clamp(ppm_needed/water_needed,0,1000)
     
     if values["new_ppm"] > target_ppm*1.01:
         values["fert"] += pow( (abs(target_ppm - values["new_ppm"]) * 0.1), 2)
-
-    values["fert_cost"] = values["fert"] * 0.5
-    values["water_cost"] = values["water"] * 0.5
+    
+    values["fert_cost"] = values["fert"] * FERTILIZER_PRICE
+    values["water_cost"] = values["water"] * WATER_PRICE
 
     return values
