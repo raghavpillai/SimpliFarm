@@ -114,3 +114,6 @@ a {
 html {
   scroll-behavior: smooth;
 }
+.innerShadow {
+  box-shadow: rgba(50, 50, 93, 0.11) 0px 30px 40px -6px inset, rgba(0, 0, 0, 0.173) 0px 18px 25px -7px inset;
+}
