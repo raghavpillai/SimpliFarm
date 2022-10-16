@@ -5,6 +5,7 @@ import Navbar from '../components/navbar';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { getUser, postData } from '../lib/firebase-client';
+import Image from 'next/image';
 
 export default function Form() {
 
@@ -82,11 +83,9 @@ export default function Form() {
                 
                 <div className='h-screen w-full relative overflow-y-hidden'>
                 <div id="bottomCircle"className='absolute rounded-full bg-[#AAF1FF] -translate-x-1/2 translate-y-1/2 left-1/2 -bottom-8 w-[50rem] h-[40rem] z-0'></div>
-                <div className='w-full h-[5rem] bg-[#C8F5FF] px-4 flex items-center justify-between'>
+                <div className='w-full h-[5rem] navBG px-4 flex items-center justify-between'>
                     <Link href={"/"}>
-                        <div className='font-black text-3xl cursor-pointer'>
-                            SF
-                        </div>
+                        <Image src="/assets/logo.png" width={50} height={50}></Image>
                     </Link>
                     <Link href={"/profile"}>
                         <div className='font-semibold text-2xl cursor-pointer'>

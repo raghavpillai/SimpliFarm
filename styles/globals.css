@@ -126,3 +126,7 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.navBG {
+  background-color: #56e0ff20;
+}
