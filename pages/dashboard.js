@@ -1,7 +1,6 @@
 import styles from '../styles/dashboard.module.css'
 import React, {Component, useState} from 'react';
 import {Chart as ChartJS} from "chart.js/auto";
-import dump from './data.json'
 import { Line, Doughnut } from 'react-chartjs-2';
 import Navbar from '../components/navbar';
 import WaterGraph from '../components/watergraph';
@@ -15,6 +14,8 @@ let tempLo = []
 let precip = []
 let humidity = []
 let costs = [0, 0]
+
+const dump = JSON.parse(localStorage.getItem('obj'));
 
 console.log(dump)
 
