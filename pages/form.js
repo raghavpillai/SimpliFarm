@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from '../styles/form.module.css'
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
+import {onAuthStateChanged} from "firebase/auth";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { NativeSelect, InputLabel, Select, OutlinedInput, MenuItem } from '@mui/material';
@@ -9,96 +10,87 @@ import Navbar from '../components/navbar';
 const fields = ["zip-code", "acres", "soilPPM", "crop-type"];
 
 
-class Form extends Component {
+export default function Form() {
 
 
-    constructor(){
-        super();
-        this.state = {
-            loaded: false,
-            inputs: ['', '', '', ''],
-            select: []
-        }
-    }
-
-    handlechange(event){
-        for(let field in fields){
-            if(event.target.id.search(fields[field])){
-                this.state.setState(() => {
-                    let temp = Object.assign({}, prevState.inputs);
-                    temp[field] = event.target.value
-                    return {temp}
-                })
-                console.log(this.state)
-                return;
-            }
-        }
-
-    }
-
-    handleSelect(){
-
-    }
-
-    componentDidMount(){
-        this.setState({
-            loaded: true
-        })
-    }
-
-    render(){
-        if(this.state.loaded){
-            return (
-                <>  
-                    <div className="image-background h-[100%] w-[100%] absolute m-0">
-                    </div>
-
-                    <Navbar />
-                    <div className="grid absolute place-items-left bg-[#ecebeg] drop-shadow-lg w-[50%] h-[75vh] translate-y-[25vh]">
-                        <div className="grid place-items-center bg-[#108ca4] p-5 rounded-lg m-0 space-y-0 drop-shadow-md text-white font-semibold">
-                            <div className="grid grid-cols-2">
-                                <TextField onChange={this.handlechange} className="input-box rounded" id="outlined-basic zip-code" label="ZIP Code" variant="filled" />
-                            </div>
-
-                            <div className="grid grid-cols-2">
-                                <TextField className="input-box rounded" id="outlined-basic acres" label="Acres" variant="filled" />
-                            </div>
-
-                            <div className="grid grid-cols-2">
-                                <TextField className="input-box rounded" id="outlined-basic soilPPM" label="Soil PPM" variant="filled" />
-                            </div>
-
-                            <div className="grid grid-cols-2">
-                                <div>
-                                    <InputLabel id="demo-controlled-open-select-label">Crop Type</InputLabel>
-                                    <Select
-                                        labelId="demo-controlled-open-select-label"
-                                        id="demo-controlled-open-select"
-                                        label="Crop Type"
-                                        value={this.state.select}
-                                        onChange={this.handleSelect}
-                                        className="input-box rounded w-[13.5rem]"
-                                        >
-                                        <MenuItem key="cotton" value="cotton"> Cotton </MenuItem>
-                                    </Select>
-                                </div>
+    const [zipCode, setZipCode] = useState('')
+    const [acres, setAcres] = useState('');
+    const [currentSoilPPM, setCurrentSoilPPM] = useState('');
+    const [expectedSoilPPM, setExpectedSoilPPM] = useState('');
+    const [cropType, setCropType] = useState('');;
 
 
-                            </div>
+    // handlechange(event){
+    //     console.log(this.state)
+    //     for(let field in fields){
+    //         if(event.target.id.search(fields[field])){
+    //             let temp = this.state.inputs.slice()
+    //             temp[field] = event.target.value
+    //             this.setState({inputs: temp})
+    //             console.log(this.state)
+    //             return;
+    //         }
+    //     }
 
-                            <div>
-                                <button className='border bg-[#FDFCFF] rounded button'>
-                                    Submit
-                                </button>
+    // }
 
-                            </div>
-                        </div>
-                    </div>
-                </>
-            )
-        }
-    }
 
+    return (
+        <>  
+            {/* <div className="image-background h-[100%] w-[100%] absolute m-0">
+            </div> */}
+            <Navbar />
+            
+            <div className='h-screen w-full relative overflow-y-hidden'>
+                <div className='absolute rounded-full bg-[#AAF1FF] -translate-x-1/2 translate-y-1/2 left-1/2 -bottom-8 w-[50rem] h-[40rem] z-0'></div>
+                <div className='w-full h-[5rem] bg-[#9AE9FB] z-50'></div>
+                <div className='flex justify-center pt-16 z-50'>
+                    <form className='w-[28rem] h-[35rem] bg-[#F9FEFF] p-6 shadow-2xl z-50'>
+                        <label className=''>
+                            Zip Code
+                        </label>
+                        <input className='w-full border-2 rounded-lg p-2 mb-6' 
+                            onChange={(e) => setZipCode(e.target.value)}
+                            value={zipCode}
+                            type="text"
+                        >
+                        </input>
+
+                        <label className=''>
+                            Acres
+                        </label>
+                        <input className='w-full border-2 rounded-lg p-2 mb-6' 
+                            onChange={(e) => setAcres(e.target.value)}
+                            value={acres}
+                            type="text"
+                        >
+                        </input>
+
+                        <label className=''>
+                            Current Soil PPM
+                        </label>
+                        <input className='w-full border-2 rounded-lg p-2 mb-6' 
+                            onChange={(e) => setCurrentSoilPPM(e.target.value)}
+                            value={currentSoilPPM}
+                            type="text"
+                        >
+                        </input>
+
+                        <label className=''>
+                            Expected Soil PPM
+                        </label>
+                        <input className='w-full border-2 rounded-lg p-2 mb-6' 
+                            onChange={(e) => setExpectedSoilPPM(e.target.value)}
+                            value={expectedSoilPPM}
+                            type="text"
+                        >
+                        </input>
+                    </form>
+
+                </div>
+
+            </div>
+        </>
+    )
 }
 
-export default Form

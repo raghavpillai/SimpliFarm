@@ -50,9 +50,9 @@ export default function Navbar() {
             <div className='font-black text-3xl'>
                 FU
             </div>
-            <div>
+            {/* <div>
                 {user !== null && ("Hello " + user.displayName)}
-            </div>
+            </div> */}
             {!loading && (user === null ? 
                 <button className="bg-white px-4 py-2 rounded-full flex z-50" onClick={()=>signInWithGoogleFunct()}>
                     <Image src="/assets/googleicon.png" width={30} height={30}></Image>
