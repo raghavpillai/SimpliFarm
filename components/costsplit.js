@@ -15,7 +15,7 @@ export default function CostSplit(props) {
         datasets: [
           {
             label: '# of Votes',
-            data: props.data,
+            data: [1,3],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',

@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/navbar'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+
   return (
     <>
     <Head>
@@ -44,7 +46,7 @@ export default function Home() {
         {/* stripe */}
         <div className='absolute top-0 -left-44 w-[120rem] h-[35rem] bg-[#99E3F4] z-0 -rotate-[30deg] shadow'></div>
 
-        <div id="learnMore" className="text-7xl font-black py-5 z-10">How it works.</div>
+        <div id="learnMore" className="text-7xl font-extrabold py-5 z-10">How it works.</div>
         <div className='flex items-center my-6 z-10'>
           <div className='text-7xl font-extrabold mr-32 -ml-32'>
             1
@@ -90,14 +92,27 @@ export default function Home() {
       </div>
       <div className='flex flex-col items-center'>
         <div className='text-6xl font-black my-12'>
-          Boost Crop Yield
+          Why SimpliFarm
         </div>
-        <div className='px-8 pt-8 boostBorder rounded-xl w-1/2 mb-12 shadow-2xl'>
+        <div className='px-8 pt-8 boostBorder rounded-xl w-3/4 mb-12 shadow-2xl'>
           <div className='w-full h-full p-4 bg-white text-2xl font-semibold text-[#1E1E1E] rouded-t-xl'>
-            From machine learning models using your farm data to chart analysis straight to your browser.
-            Crunch, track, and display data through SimpliFarm. We strive to know your farm
-            better than anyone else.
-            <div className='flex justify-center my-6'>
+            <div className='flex justify-around'>
+              <div className='mx-2 text-center'>
+                <h1 className='text-3xl extrabold mb-2'>Sustainable Farming</h1>
+                <div>
+                  Find how much water you should be saving. Improve soil and land quality for future use. And produce more with less resources.
+                </div>
+              </div>
+              <div className='mx-2 text-center'>
+                <h1 className='text-3xl text-black mb-2'>Boost Crop Yield</h1>
+                <div>
+                  From machine learning models to chart analysis straight to your browser.
+                  Crunch, track, and display data through SimpliFarm to improve how you farm.
+                </div>
+              </div>
+
+            </div>
+            <div className='flex justify-center my-8'>
               <Image src="/assets/plant.png" width={100} height={100}></Image>
 
             </div>
@@ -105,7 +120,47 @@ export default function Home() {
           
         </div>
       </div>
-      <div className='h-screen flex  envisionBG'>
+      <div className='my-12'>
+        <div className='w-11/12 rounded-xl bg-[#12a1c0] m-auto p-8'>
+          <h1 className='my-8 text-6xl font-extrabold text-center'>Technology-First</h1>
+          <div className='w-4/5 m-auto flex flex-wrap justify-between'>
+            {/* card */}
+            <div className='w-[20rem] h-[25rem] bg-[#E7FBFF] rounded-xl p-4 text-center my-4 mx-2'>
+              <h1 className='text-2xl my-4 font-semibold'>Tech Stack</h1>
+              <div className='text-lg'>
+                <p>NextJS</p>
+                <p>Firebase</p>
+                <p>Flask</p>
+                <p>SciKit-Learn</p>
+              </div>
+            </div>
+            {/* card */}
+            <div className='w-[20rem] h-[25rem] bg-[#E7FBFF] rounded-xl p-4 text-center my-4 mx-2'>
+              <h1 className='text-2xl my-4 font-semibold'>Machine Learning</h1>
+              <div className='text-lg'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </div>
+            </div>
+            {/* card */}
+            <div className='w-[20rem] h-[25rem] bg-[#E7FBFF] rounded-xl p-4 text-center my-4 mx-2'>
+              <h1 className='text-2xl my-4 font-semibold'>APIs</h1>
+              <div className='text-lg'>
+                <p>WeatherAPI</p>
+                <p>Google Maps API</p>
+                <p>Twilio API</p>
+                <p>Co:here API</p>
+              </div>
+            </div>
+          
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div className='h-screen flex envisionBG'>
         <div className='w-1/2 flex flex-col items-center justify-center'>
           <div className='text-6xl font-black'>
             Envision Growth
@@ -116,11 +171,28 @@ export default function Home() {
 
         </div>
         <div className='w-1/2 flex items-center justify-end'>
-          <div className='py-8 pl-8 boostBorder rounded-l-xl'>
-            <Image src="/assets/graph.png" width={1100} height={700}></Image>
+          <div id="chart" className='py-8 pl-8 boostBorder rounded-l-xl'>
+                <Image src={"/assets/graph.png"} width={1100} height={700} ></Image>
           </div>
 
         </div>
+      </div>
+      <div className='innerShadow px-16 py-16 w-4/5 bg-[#12a1c0] mx-auto rounded-b-2xl mb-16 text-white'>
+        <h1 className='mb-8 text-6xl font-extrabold text-center text-white'>Our Vision</h1>
+        <div className='text-4xl text-semibold mt-12'>
+          Automation
+        </div>
+        <p className='text-xl'>
+          Connect our software analysis with hardware to automate and take care of watering crops.
+        </p>
+
+        <div className='text-4xl text-semibold mt-12'>
+          Longer Predictions and Historical Data
+        </div>
+        <p className='text-xl'>
+          Train the machine learning model to create more accurate prediction for longer term predictons.
+          Use historial data to accomplish tasks.
+        </p>
 
       </div>
     </div>

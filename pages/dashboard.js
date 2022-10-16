@@ -50,7 +50,7 @@ export default function Dashboard() {
                 </div>
             </div>
             <div className='w-1/1 h-auto text-4xl font-bold text-center mt-4'>Water & Fertilizer Costs</div>
-            <div className='w-1/1 h-1/1 items-center mt-4'>
+            <div className='w-1/2 mx-auto items-center my-4'>
                 <div className='self-center w-3/4 h-1/2 translate-x-[17.5%]'>
                     <CostSplit data={costs} />
                 </div>
