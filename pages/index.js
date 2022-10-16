@@ -36,7 +36,7 @@ export default function Home() {
             </div>
           </div>
           <div className='text-3xl text-[#2B2B2B]'>
-            Do more, save more. Calculate true water needs and track water usage.
+            Do more, save more. Calculate true farming needs and track resource usage.
           </div>
           <a href="#learnMore" className="rounded-full bg-[#6BBDF8] inline-block px-4 py-2 font-semibold z-50">Learn More</a>
         </div>
@@ -81,7 +81,7 @@ export default function Home() {
           </div>
           <div className='bg-[#108ca4] py-5 px-10 rounded-lg min-w-[35rem] max-w-[35rem]'>
             <div className="font-bold text-3xl">
-              Start watering!
+              Start farming!
             </div>
             <div className='text-lg'>
               Start tending to your crops and check back regularly for more data predictions.
@@ -100,7 +100,7 @@ export default function Home() {
               <div className='mx-2 text-center'>
                 <h1 className='text-3xl extrabold mb-2'>Sustainable Farming</h1>
                 <div>
-                  Find how much water you should be saving. Improve soil and land quality for future use. And produce more with less resources.
+                  Find how much water and fertilizer you should be saving. Improve soil and land quality for future use. And produce more with less resources.
                 </div>
               </div>
               <div className='mx-2 text-center'>
@@ -128,17 +128,20 @@ export default function Home() {
             <div className='w-[20rem] h-[25rem] bg-[#E7FBFF] rounded-xl p-4 text-center my-4 mx-2'>
               <h1 className='text-2xl my-4 font-semibold'>Tech Stack</h1>
               <div className='text-lg'>
-                <p>NextJS</p>
+                <p>Next.js</p>
                 <p>Firebase</p>
                 <p>Flask</p>
                 <p>SciKit-Learn</p>
+                <p>Co:Here</p>
+                <p>Twilio</p>
+                <p>Co:Here</p>
               </div>
             </div>
             {/* card */}
             <div className='w-[20rem] h-[25rem] bg-[#E7FBFF] rounded-xl p-4 text-center my-4 mx-2'>
               <h1 className='text-2xl my-4 font-semibold'>Machine Learning</h1>
               <div className='text-lg'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Through our extensive dataset and performing analysis on your data, we can predict future usage patterns to better prepare yourself for your future farming. 
               </div>
             </div>
             {/* card */}
@@ -147,8 +150,6 @@ export default function Home() {
               <div className='text-lg'>
                 <p>WeatherAPI</p>
                 <p>Google Maps API</p>
-                <p>Twilio API</p>
-                <p>Co:here API</p>
               </div>
             </div>
           

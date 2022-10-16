@@ -10,7 +10,7 @@ def create_linear_regression(x_arr, y_arr):
     y = np.array(y_arr)
 
     model = LinearRegression().fit(x, y) 
-
+    
     # Confidence
     conf = 1 - model.score(x, y)
 

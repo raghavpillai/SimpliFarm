@@ -43,6 +43,8 @@ def get_yield_info(zip: str, crop: str, acres: str, ppm: str) -> dict:
     forecast: dict = weather.get_forecast(zip)
     current_ppm: int = int(ppm)
     
+    forecast["crop"] = crop
+
     # Given by crop
     target_ppm: int = crops[crop]["target_ppm"]
     base_water: int = crops[crop]["base_water"]
