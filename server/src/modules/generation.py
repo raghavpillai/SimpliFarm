@@ -9,7 +9,7 @@ load_dotenv(env_path)
 
 co_client = cohere.Client(os.getenv("COHERE_KEY"))
 
-twi_account_sid = 'AC25ae0a353a9ae9a549feb658d0cb89f9' 
+twi_account_sid = os.getenv("TWILIO_ACC") 
 twi_auth_token = os.getenv("TWILIO_KEY")
 client = Client(twi_account_sid, twi_auth_token) 
 
