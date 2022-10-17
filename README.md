@@ -21,13 +21,15 @@ SimpliFarm's frontend is built using Next.js and React. The backend is written i
 If you want to try SimpliFarm and check it out, use these quick installation steps. Note to run this, you will need Node.js and Python3 installed, with the local Node and Python dependencies installed.
 
 1. Clone our repository to your local machine. If you have git, you can do this quickly by running `git clone https://github.com/raghavpillai/SimpliFarm.git` in your terminal.
-2. Rename the `TEMPLATE.env.local` to `.env.local` in the root directory
-   1. You'll need to create API keys for WeatherAPI, Google Maps, Twilio and CoHere. You'll also need to create a Firebase datastore, and input the keys here.
-3. Create a terminal instance in the `/client` folder of the project and run `npm install`.
-4. Create a terminal instance in the `/server` folder and run `pip3 install -r requirements.txt`
-5. In the client folder, run `npm run dev`
-6. In the server terminal instance, run `python3 server.py`
-7. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. Have a look around!
+2. Rename the `TEMPLATE.env.local` to `.env.local` in the `/client` directory
+   - You'll need to create API keys for WeatherAPI, Google Maps, Twilio and CoHere. You'll also need to create a Firebase datastore, and input the keys here.
+3. Run `setup.sh` to install client and server dependencies. 
+   - If you're on a non-UNIX based terminal, you'll need to install these manually. Instructions are as below. 
+   1. Create a terminal instance in the `/client` folder of the project and run `npm install`.
+   2. Create a terminal instance in the `/server` folder and run `pip3 install -r requirements.txt`
+4. In the client folder, run `npm run dev`
+5. In the server terminal instance, run `python3 server.py`
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. Have a look around!
 
 <br>
 <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/257/476/datas/original.png">
