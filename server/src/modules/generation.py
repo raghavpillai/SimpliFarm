@@ -4,7 +4,7 @@ import cohere
 import os
 from dotenv import load_dotenv
 
-env_path=os.path.join('../', '.env.local')
+env_path=os.path.join('../client/', '.env.local')
 load_dotenv(env_path)
 
 co_client = cohere.Client(os.getenv("COHERE_KEY"))
