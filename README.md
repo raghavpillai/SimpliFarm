@@ -52,3 +52,5 @@ If you want to try SimpliFarm and check it out, use these quick installation ste
 <br>
 <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/257/476/datas/original.png">
 <br></br>
+
+View the website without running the project [here](/readMeAssets/README.md)  
