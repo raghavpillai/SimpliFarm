@@ -1,11 +1,15 @@
 from concurrent.futures import ThreadPoolExecutor
 from twilio.rest import Client 
 import cohere
+import os
+from dotenv import load_dotenv
 
-co_client = cohere.Client('gaJhCMhXAQB3TECGAvNzWDXe3MN9B99zEzbkvoF3')
+load_dotenv()
+
+co_client = cohere.Client(os.getenv("COHERE_KEY"))
 
 twi_account_sid = 'AC25ae0a353a9ae9a549feb658d0cb89f9' 
-twi_auth_token = 'e9f2492b09d5adf4dbd925295fbc67ab'
+twi_auth_token = os.getenv("TWILIO_KEY")
 client = Client(twi_account_sid, twi_auth_token) 
 
 def send_msg(msg, image, number):

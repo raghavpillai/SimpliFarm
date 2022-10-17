@@ -1,10 +1,14 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 WEATHER_URL: str = "http://api.weatherapi.com/v1/forecast.json"
-WEATHER_KEY: str = "c6183838408a4882994185553221510"
+WEATHER_KEY: str = os.getenv("WEATHER_KEY")
 
 GOOGLE_URL: str = "https://maps.googleapis.com/maps/api/staticmap"
-GOOGLE_KEY: str = "AIzaSyDxxa0eH4EqpfA3PHi_ZgD_uwBs_k_1IBo"
+GOOGLE_KEY: str = os.getenv("GOOGLE_KEY")
 
 def get_forecast(zip: int) -> dict:
     weather_req = requests.get(WEATHER_URL, params={
