@@ -8,8 +8,6 @@ SimpliFarm also reports daily and bi-weekly consumption and financial costs. We 
 
 The inspiration for this project came from a common denominator of all human beings -- the necessity of food. For the billions of humans on this planet, we all necessitate the consumption of food, making it a crucial industry, with even a minor optimization having the potential to fill millions of mouths. This was the inspiration behind SimpliFarm, to use the exceptional amount of data available today, to determine the most sustainable route to farm tomorrow
 
-
-
 ## Stack
 
 SimpliFarm's frontend is built using Next.js and React. The backend is written in Python, utilizing Flask for API delivery. We used Scikit-learn for our predictions using machine learning, specifically using a linear regression model. Weather and mapping was achieved through WeatherAPI and the Google Maps API respectively. Generation of natural language was accomplished with Cohere, and SMS delivery was done through Twilio.
