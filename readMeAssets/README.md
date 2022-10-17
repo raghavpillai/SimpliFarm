@@ -1,5 +1,5 @@
 # Home Page
-<img src="../readMeAssets/websiteAssets/homePage.png">
+<img src="../readMeAssets/websiteAssets/homepage.png">
 <img src="../readMeAssets/websiteAssets/howItWorks.png">
 <img src="../readMeAssets/websiteAssets/whySimpliFarm.png">
 <img src="../readMeAssets/websiteAssets/techStack.png">
