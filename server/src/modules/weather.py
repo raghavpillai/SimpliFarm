@@ -2,7 +2,9 @@ import requests
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+env_path=os.path.join('../', '.env.local')
+
+load_dotenv(env_path)
 
 WEATHER_URL: str = "http://api.weatherapi.com/v1/forecast.json"
 WEATHER_KEY: str = os.getenv("WEATHER_KEY")
