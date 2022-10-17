@@ -30,7 +30,7 @@ export default function Score(props) {
            height = chart.height,
            ctx = chart.ctx;
            ctx.restore();
-           var fontSize = (height / 50).toFixed(2);
+           var fontSize = (height / 50).toFixed(2); 
            ctx.font = fontSize + "font-bold";
            ctx.textBaseline = "top";
            var text = parseInt(props.data) + "%",
@@ -67,6 +67,7 @@ export default function Score(props) {
                 'rgba(255, 159, 64, 0)',
             ],
             borderWidth: 1,
+            fontSize: '10vw',
           },
         ],
       };
