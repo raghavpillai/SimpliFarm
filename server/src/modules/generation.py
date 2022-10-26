@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+from threading import Thread
 from twilio.rest import Client 
 import cohere
 import os
@@ -10,16 +11,18 @@ load_dotenv(env_path)
 co_client = cohere.Client(os.getenv("COHERE_KEY"))
 
 twi_account_sid = os.getenv("TWILIO_ACC") 
-twi_auth_token = os.getenv("TWILIO_KEY")
+twi_auth_token = os.getenv("TWILIO_AUTH_TOKEN")
 client = Client(twi_account_sid, twi_auth_token) 
 
 def send_msg(msg, image, number):
-    message = client.messages.create(
+    message = client.messages.create(  
         messaging_service_sid='MG4a4e60239a96a10a29b551d521abf921', 
-        body=msg,    
-        media_url=[image],
+        #media_url=[image],
+        body=msg,
         to=f'+1{number}' 
-    )
+    ) 
+    #print("MESSAGED!")
+
 
 def generate_response(name, number, total_price, wp_sf, sp_sf, ps, pw, pf, image):
     response = co_client.generate(
@@ -36,7 +39,7 @@ def generate_response(name, number, total_price, wp_sf, sp_sf, ps, pw, pf, image
         return_likelihoods='NONE'
     )
     
+    #Thread( target=send_msg, args=(response.generations[0].text, image, number) ).start()
+    #send_msg(response.generations[0].text, image, number)
     with ThreadPoolExecutor(max_workers=1) as executor:
         future = executor.submit(send_msg, response.generations[0].text, image, number)
-
-    
