@@ -13,19 +13,19 @@ The inspiration for this project came from a common denominator of all human bei
 
 ## Tech Stack
 * Next.js  
-  Main framework to create the website
+  - Main framework to create the website
 * Firebase  
-  Stores user farm data and takes care of the login account system
+  - Stores user farm data and takes care of the login account system
 * Flask
-  Used for API delivery
+  - Used for API delivery
 * Scikit-learn  
-  For our predictions using machine learning, specifically the linear regression model
+  - For our predictions using machine learning, specifically the linear regression model
 * Weather API & Google API  
-  Achieved weather data and mapping fetching respectively
-* Co:here AI  
-  Generation of natural language from our results
+  - Achieved weather data and mapping fetching respectively
+* Co:here AI 
+  - Generation of natural language from our results
 * Twilio  
-  Achieves SMS delivery of our results straight to your phone
+  - Achieves SMS delivery of our results straight to your phone
 
 <br>
 <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/257/479/datas/original.png">
